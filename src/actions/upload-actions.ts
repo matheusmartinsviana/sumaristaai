@@ -60,21 +60,21 @@ export async function generatePdfSummary({
   try {
     let summary = null;
 
-    try {
-      summary = await generateSummaryFromOpenAI(pdfText);
-    } catch (openAIError: any) {
-      console.error("Erro ao tentar gerar sumário com OpenAI:", openAIError);
-    }
+    // try {
+    //   summary = await generateSummaryFromOpenAI(pdfText);
+    // } catch (openAIError: any) {
+    //   console.error("Erro ao tentar gerar sumário com OpenAI:", openAIError);
+    // }
 
     // Se OpenAI falhou ou retornou null, tenta Gemini
     if (!summary) {
-      console.warn("Tentando com Gemini após falha na OpenAI...");
+      console.warn("Gerando sumário com Gemini");
       try {
         summary = await generateSummaryFromGemini(pdfText);
       } catch (geminiError) {
         console.error("Erro ao gerar o sumário com Gemini:", geminiError);
         throw new Error(
-          "Erro ao gerar o sumário com as duas IA's disponíveis.",
+          "Erro ao gerar o sumário com o Gemini.",
         );
       }
     }
