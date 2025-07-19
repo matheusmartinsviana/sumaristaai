@@ -6,11 +6,11 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
 export const generateSummaryFromGemini = async (pdfText: string) => {
   try {
     const model = genAI.getGenerativeModel({
-      model: "gemini-1.5-flash-002",
-      generationConfig: {
-        temperature: 0.7,
-        maxOutputTokens: 1500,
-      },
+      model: "gemini-2.5-flash",
+      // generationConfig: {
+      //   temperature: 0.7,
+      //   maxOutputTokens: 1500,
+      // },
     });
 
     const prompt = {
