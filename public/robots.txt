@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://sumaristaai.vercel.app
+
+# Sitemaps
+Sitemap: https://sumaristaai.vercel.app/sitemap.xml
