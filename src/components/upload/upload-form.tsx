@@ -117,11 +117,14 @@ export default function UploadForm() {
                 await sendDiscordNotification(
                     `O usuário ${user?.firstName} (${user?.emailAddresses}) gerou um sumário do arquivo ${file.name}. 🚀📃 \n`,
                 );
-
+                
                 const primaryEmail = user?.emailAddresses?.[0]?.emailAddress;
                 if (primaryEmail) {
                     await addUploadToCount(primaryEmail);
                 }
+                
+                toast.success("Você será redirecionado... ✨");
+
 
                 formRef.current?.reset();
                 router.push(`/summaries/${storeResult.data.id}`);
