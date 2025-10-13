@@ -86,6 +86,13 @@ const PricingCard = async ({
                     id === "pro" && "border-blue-500 gap-5 border-2",
                 )}
             >
+                {id === "pro" && (
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none">
+                        <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 font-semibold text-xs shadow animate-bounce transition-all duration-300">
+                            Mais Popular 🚀
+                        </span>
+                    </div>
+                )}
                 {" "}
                 {/* Fazendo o card do plano pro ficar mais destacado se estiver selecionado */}
                 <MotionDiv
